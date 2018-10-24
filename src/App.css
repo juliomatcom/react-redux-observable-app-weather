@@ -1,0 +1,13 @@
+.app {
+  text-align: center;
+}
+
+.app ul {
+  list-style: none;
+}
+
+.app ul li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 10px;
+}

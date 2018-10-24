@@ -1,0 +1,42 @@
+div.box {
+  width: 300px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  min-height: 200px;
+}
+
+div.box div.city-container {
+  padding-top: 20px;
+  padding-left: 20px;
+  height: 35px;
+}
+div.box p.city {
+  color: white;
+  font-size: 18px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  float: left;
+}
+div.box span.temp {
+  font-family: sans-serif;
+  font-size: 60px;
+}
+
+div.box img.icon {
+  display: block;
+  margin: 0px auto;
+}
+
+div.box span.description {
+  font-family: monospace;
+}
+
+div.box div.info {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+div.box-empty {
+  padding: 25px;
+}
