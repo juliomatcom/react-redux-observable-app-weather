@@ -1,4 +1,4 @@
-# A React Redux Observable Weather  app 🔥
+# A React Redux Observable Weather example app 🔥
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 You need at least node v8.x.  
@@ -17,8 +17,11 @@ This project was created with [create-react-app](https://github.com/facebook/cre
     "id": "<YOUR_API_KEY>"
   }
   ```
-- Run in development mode:  
-  `$ npm start`
+- Run in localhost (development mode):  
+  `$ npm start`  
+
+- Run tests:  
+  `$ npm test`  
 
 Hover over a City or click on mobile to show the current weather.   
 
