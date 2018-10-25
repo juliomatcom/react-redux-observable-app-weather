@@ -44,7 +44,6 @@ export const cityEpic = function (action$) { // switchMap, takeUntil
         )),
         retry(2), // retry on error
         catchError(error => { // end of stream response$
-          console.log(error);
           return of(
             errorAction(error),
             updateCityAction({

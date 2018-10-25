@@ -27,7 +27,6 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const errorScreen = <p className="error"> Error: {this.props.error && this.props.error.message}</p>;
 
     return (
