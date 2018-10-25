@@ -42,8 +42,8 @@ export const cityEpic = function (action$) { // switchMap, takeUntil
         takeUntil(action$.pipe( // Cancellation:  https://github.com/redux-observable/redux-observable/blob/master/docs/recipes/Cancellation.md
           filter(action => action.type === FETCH_STOP)
         )),
-        retry(2), // reintentar
-        catchError(error => { // this complete the straem ajax
+        retry(2), // retry on error
+        catchError(error => { // end of stream response$
           console.log(error);
           return of(
             errorAction(error),
@@ -53,7 +53,7 @@ export const cityEpic = function (action$) { // switchMap, takeUntil
             })
           );
         })
-      )
+      );
     })
   );
 }
