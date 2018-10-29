@@ -25,6 +25,7 @@ class Home extends React.Component {
   componentDidMount() {
     this.props.history.listen((location, action) => { // https://stackoverflow.com/questions/41911309/how-to-listen-to-route-changes-in-react-router-v4
       this.props.dispatchStopFetch(); // Cancellation
+      this.props.dispatchLoading(false);
     });
   }
 
