@@ -7,6 +7,7 @@ import {
   fetchCityAction,
   getStopAction
 } from '../actions/cityActions';
+import { loadingAction } from '../actions/uiActions';
 
 class Home extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class Home extends React.Component {
 
   fetchData(city) {
     return () => {
+      this.props.dispatchLoading(true);
       this.props.dispatchFetchCity(city);
     }
   }
@@ -28,9 +30,11 @@ class Home extends React.Component {
 
   render() {
     const errorScreen = <p className="error"> Error: {this.props.error && this.props.error.message}</p>;
+    const loading = <p> Loading... </p>;
 
     return (
       <div>
+        {this.props.loading && loading}
         {this.props.error && errorScreen}
         <Choices eventSub={this.fetchData} choices={this.props.choices}/>
         <Box city={this.props.city} data={this.props.data} loading={this.props.loading}/>
@@ -44,7 +48,8 @@ const mapStateToProps = state => state;
 const mapDispatchToProps = {
   dispatchUpdateCity: updateCityAction,
   dispatchFetchCity: fetchCityAction,
-  dispatchStopFetch: getStopAction
+  dispatchStopFetch: getStopAction,
+  dispatchLoading: loadingAction
 };
 
 export const HomeConnected = connect(

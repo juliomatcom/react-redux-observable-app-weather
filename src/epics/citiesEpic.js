@@ -13,7 +13,8 @@ import {
   updateCityAction
 } from '../actions/cityActions';
 import {
-  errorAction
+  errorAction,
+  loadingAction
 } from '../actions/uiActions';
 import api from '../api.json'
 
@@ -36,6 +37,7 @@ export const cityEpic = function (action$) { // switchMap, takeUntil
           };
           return of(
             updateCityAction(data),
+            loadingAction(false),
             errorAction()
           );
         }),
@@ -46,6 +48,7 @@ export const cityEpic = function (action$) { // switchMap, takeUntil
         catchError(error => { // end of stream response$
           return of(
             errorAction(error),
+            loadingAction(false),
             updateCityAction({
               city: '',
               data: {}

@@ -1,5 +1,8 @@
 import { UPDATE_CITY } from '../actions/cityActions';
-import { FETCH_ERROR } from '../actions/uiActions';
+import {
+  FETCH_ERROR,
+  UI_LOADING
+} from '../actions/uiActions';
 
 export default function(state, action) {
   switch (action.type) {
@@ -14,6 +17,11 @@ export default function(state, action) {
         ...state,
         error: action.payload,
       }
+    case UI_LOADING:
+      return {
+        ...state,
+        loading: action.payload
+      };
     default:
       return state;
   }
