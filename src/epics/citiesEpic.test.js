@@ -7,7 +7,8 @@ import {
   updateCityAction
 } from '../actions/cityActions';
 import {
-  errorAction
+  errorAction,
+  loadingAction
 } from '../actions/uiActions';
 import { cityEpic } from './citiesEpic';
 
@@ -51,11 +52,12 @@ describe('cityEpic()', () => {
 
     it('should update city if response is OK', () => {
       const marbles1 = '-f';
-      const marbles2 = '-(ue)';
+      const marbles2 = '-(ule)';
 
       const values = {
         f: fetchCityAction('Havana'),
         u: updateCityAction(dataMock),
+        l: loadingAction(false),
         e: errorAction() // no errors really
       };
 
@@ -85,11 +87,12 @@ describe('cityEpic()', () => {
 
     it('if error launch actions', () => {
       const marbles1 = '-f';
-      const marbles2 = '-(eu)';
+      const marbles2 = '-(elu)';
 
       const values = {
         f: fetchCityAction('Havana'),
         u: updateCityAction(emptyCityMock),
+        l: loadingAction(false),
         e: errorAction(errorMock)
       };
 
