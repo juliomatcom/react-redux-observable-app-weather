@@ -21,7 +21,7 @@ import api from '../api.json'
 const API_ID = api.id;
 const API_HOST = `http://api.openweathermap.org/data/2.5/weather?q=:city&appid=${API_ID}&units=metric`;
 
-export const cityEpic = function (action$) { // switchMap, takeUntil
+export const cityEpic = function (action$) {
   return action$.pipe(
     filter(action => action.type === FETCH_CITY),
     switchMap(action => {
@@ -41,7 +41,8 @@ export const cityEpic = function (action$) { // switchMap, takeUntil
             errorAction()
           );
         }),
-        takeUntil(action$.pipe( // Cancellation:  https://github.com/redux-observable/redux-observable/blob/master/docs/recipes/Cancellation.md
+        // response$ cancellation: https://github.com/redux-observable/redux-observable/blob/master/docs/recipes/Cancellation.md
+        takeUntil(action$.pipe(
           filter(action => action.type === FETCH_STOP)
         )),
         retry(2), // retry on error
