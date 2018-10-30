@@ -150,7 +150,7 @@ describe('cityEpic()', () => {
       const ts = createTestScheduler();
 
       const spy = jest.fn(() => {
-        const marbleMock = '-##m'; //TODO: Fix
+        const marbleMock = '-#';
         const values = { m: responseMock };
 
         return ActionsObservable.from(
@@ -160,7 +160,7 @@ describe('cityEpic()', () => {
       ajax.getJSON = spy;
 
       const marbles1 = '-f';
-      const marbles2 = '----(elu)';
+      const marbles2 = '----(elu)'; // <--- 3+ frames
 
       const values = {
         f: fetchCityAction('Havana'),
