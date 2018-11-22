@@ -1,10 +1,11 @@
 # A React Redux Observable Weather example app 🔥
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-You need at least node v8.x.  
-This project was created with [create-react-app](https://github.com/facebook/create-react-app).
+### [Live demo](http://45.77.67.1:3001/)  
 
 ## Setup in local
+You need at least node v8.x.  
+This project was created with [create-react-app](https://github.com/facebook/create-react-app). 
 
 - Clone this repo: `$ git clone https://github.com/juliomatcom/react-redux-observable-app-weather.git`  
 
