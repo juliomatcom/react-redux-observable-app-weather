@@ -10,7 +10,7 @@ This project was created with [create-react-app](https://github.com/facebook/cre
 
 - `$ npm install`  
 
-- In order to show real time data you need a free API key from https://openweathermap.org/api then add a new `api.json` file in the project root with the content:  
+- In order to show real time data you need a free API key from https://openweathermap.org/api then add a new `api.json` file in the `src/` folder with the content:  
 
   ```json
   {
