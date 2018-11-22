@@ -35,10 +35,10 @@ class Home extends React.Component {
 
     return (
       <div>
-        {this.props.loading && loading}
-        {this.props.error && errorScreen}
         <Choices eventSub={this.fetchData} choices={this.props.choices}/>
         <Box city={this.props.city} data={this.props.data} loading={this.props.loading}/>
+        {this.props.loading && loading}
+        {this.props.error && errorScreen}
       </div>
     );
   }
