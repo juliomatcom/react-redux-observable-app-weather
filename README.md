@@ -1,7 +1,7 @@
 # A React Redux Observable Weather example app 🔥
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-### [Live demo](http://45.77.67.1:3001/)  
+### [Live demo](http://weather.apps.juliocesar.space/)  
 
 ## Setup in local
 You need at least node v8.x.  
